@@ -2,6 +2,9 @@ import Vue from 'vue'
 import Chakra, { CThemeProvider, CReset } from '@chakra-ui/vue'
 import App from './App.vue'
 
+import "bootstrap/dist/css/bootstrap.min.css"
+import "bootstrap"
+
 Vue.use(Chakra)
 
 new Vue({

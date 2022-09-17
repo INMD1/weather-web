@@ -23,11 +23,17 @@
 저는 Vue3로 시작을 할려고 했으나 많은 도구들이 아직 Vue3을 지원하지 않아서 Vue2로 개발을 시작합니다.<br>
 그리고 지금은 Api 재설계 및 디자인 초안을 개발 하고 있습니다.
 
+## 2022-09-16
+
+디자인을 넣어보고 있습 하지만 나는 CSS능력이나 디자인 개발 능력이 떨어져서 여러 디자인 프레임워크를 이용해서 개발할 에정임<br>
+
 ## 참고사항
 weather_web은 아래와 같은 프레임워크 및 라이브러리를 사용합니다.<br><br>
 
+Bootstrap: https://getbootstrap.com/<br>
 chakra UI(Vue): https://vue.chakra-ui.com/ <br>
 Ionic icon : https://github.com/ionic-team/ionicons
+
 # 라이센스
 이 사이트는 공공의 이익의 목적으로 제작된 사이트 입니다.<br>
 그래서 코드를 보고 수정을 하거나 디자인만 수정해서 배포를 하셔됨니다.<br>
