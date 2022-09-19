@@ -4,9 +4,14 @@
     <!--메인 페이지 -->
     <div class="container-filed">
       <div class="row">
-        <div class="col-md-8"></div>
+        <!--현재 온도 또는 습도,풍속,UV 정보를 크게 보여주는 컴포먼트-->
+        <div class="col-md-8">
 
-        <div class="col-md-4"></div>
+        </div>
+        <!--검색 또는 주간날씨를 알려주는 컴포먼트-->
+        <div class="col-md-4">
+
+        </div>
       </div>
     </div>
   </div>
@@ -20,7 +25,8 @@
       };
     }, 
     mounted() {
-
+      //이미 랜덤 호출 코드
+      this.bg_id = Math.round(0.8)
     }
   }
 </script>

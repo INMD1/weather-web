@@ -8,7 +8,9 @@
 }
 
 @media (min-width: 980px) { 
-    .mobile{
-        display: none;
-    }
+
+}
+
+@media (max-width: 980px) { 
+
 }
