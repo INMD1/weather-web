@@ -1,4 +1,11 @@
-
+.background-set {
+    height: 100vh;
+    overflow: hidden;
+    margin:0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 
 @media (min-width: 980px) { 
     .mobile{
