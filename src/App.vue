@@ -1,6 +1,6 @@
 <template>
   <!--바탕화면 삽입-->
-  <div class="background-set" :style="{'backgroundImage': 'url(../image/background/bg1.jpg)'}">
+  <div class="background-set" :style="{'backgroundImage': 'url(https://raw.githubusercontent.com/INMD1/weather-web/main/src/assets/image/background/bg'+ bg_id +'.jpg)'}">
     <!--메인 페이지 -->
     <div class="container-filed">
       <div class="row">
@@ -16,7 +16,7 @@
   export default {
     data() {
       return {
-        bg_path : "./assets/background/bg1"
+        bg_id : 2
       };
     }, 
     mounted() {
