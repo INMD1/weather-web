@@ -1,6 +1,6 @@
 <template>
   <!--바탕화면 삽입-->
-  <div class="background-set" :style="{'backgroundImage': 'url(https://raw.githubusercontent.com/INMD1/weather-web/main/src/assets/image/background/bg'+ bg_id +'.jpg)'}">
+  <div class="background-set" :style="{'backgroundImage': 'url(https://raw.githubusercontent.com/INMD1/weather-web/main/src/assets/image/background/bg'+ this.bg_id +'.jpg)'}">
     <!--메인 페이지 -->
     <div class="container-filed">
       <div class="row">
@@ -21,12 +21,12 @@
   export default {
     data() {
       return {
-        bg_id : 2
+        bg_id : 0
       };
     }, 
     mounted() {
       //이미 랜덤 호출 코드
-      this.bg_id = Math.round(0.8)
+      this.bg_id = Math.floor(Math.random() * (8 - 1)) + 1;
     }
   }
 </script>
