@@ -1,3 +1,12 @@
+/*폰트*/
+@font-face {
+    font-family: 'MICEGothic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-01@1.0/MICEGothic Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/*디자인코드*/
 .background-set {
     height: 100vh;
     width: 100vw;
@@ -9,10 +18,16 @@
     background-position: center;
 }
 
+.MICEGothic {
+    font-family: 'MICEGothic';
+}
+
+/*PC에서만 보여야 할때 또는 크기 조정*/
 @media (min-width: 980px) { 
 
 }
 
+/*모바일에서만 보여야 할때 또는 크기 고정*/
 @media (max-width: 980px) { 
 
 }
