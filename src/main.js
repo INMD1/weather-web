@@ -1,14 +1,13 @@
 import Vue from 'vue'
-import Chakra, { CThemeProvider, CReset } from '@chakra-ui/vue'
 import App from './App.vue'
 
 import "bootstrap/dist/css/bootstrap.min.css"
 import "bootstrap"
 import "./assets/style/main.css"
 
-Vue.use(Chakra)
+
+Vue.config.productionTip = false
 
 new Vue({
-  el: '#app',
-  render: (h) => h(CThemeProvider, [h(CReset), h(App)])
-}).$mount()
+  render: h => h(App),
+}).$mount('#app')

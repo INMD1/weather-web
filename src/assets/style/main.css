@@ -18,6 +18,20 @@
     background-position: center;
 }
 
+.menu_background {
+    background-color:rgba(36, 35, 35, 0.342);
+    height: 100vh;
+}
+
+.another_background {
+    background-color:rgba(36, 35, 35, 0.342);
+    height: 100vh;
+}
+
+.blank {
+    height: 70vh;
+}
+
 .MICEGothic {
     font-family: 'MICEGothic';
 }
@@ -28,6 +42,13 @@
 }
 
 /*모바일에서만 보여야 할때 또는 크기 고정*/
-@media (max-width: 980px) { 
+@media (max-width: 980px) {
+    .hidden {
+        display: none;
+    }
 
+    .blank {
+        height: 30vh;
+    }
+    
 }
