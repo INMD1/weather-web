@@ -43,6 +43,12 @@
 
 /*모바일에서만 보여야 할때 또는 크기 고정*/
 @media (max-width: 980px) {
+    .another_background {
+        background-color:rgba(36, 35, 35, 0.342);
+        height: 100vh;
+        border-radius: 5% 5% 0% 0%;
+    }
+
     .hidden {
         display: none;
     }
