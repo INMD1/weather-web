@@ -5,6 +5,8 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import "bootstrap"
 import "./assets/style/main.css"
 
+import "bootstrap-icons/font/bootstrap-icons.css"
+
 
 Vue.config.productionTip = false
 
