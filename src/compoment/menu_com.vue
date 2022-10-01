@@ -90,18 +90,18 @@
             </div>
           <h3 class="blod" :style="{ color: this.color }">지역 정보</h3>
           <!--이 데이터들은 해수욕장 데이터가 리턴이 되면 뜬다-->
-          <div class="row row-cols-2 g-2 g-lg-3" hidden>
+          <div class="row row-cols-2 g-2 g-lg-3">
             <div class="col">
-              <div class="p-3 border bg-light">Row column</div>
+              <div class="p-3 border bg-light">뭐 넣을까</div>
             </div>
             <div class="col">
-              <div class="p-3 border bg-light">Row column</div>
+              <div class="p-3 border bg-light">뭐 넣을까</div>
             </div>
             <div class="col">
-              <div class="p-3 border bg-light">Row column</div>
+              <div class="p-3 border bg-light">뭐 넣을까</div>
             </div>
             <div class="col">
-              <div class="p-3 border bg-light">Row column</div>
+              <div class="p-3 border bg-light">뭐 넣을까</div>
             </div>
           </div>
           <!--이 아래 데이터 같은 경우 일반 지역에서 소개되는 뉴스를 제공한다.-->
