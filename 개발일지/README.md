@@ -14,10 +14,14 @@
 다음에 진행 할거는 메뉴 컴포먼트 부분에 넣을 디자인하고 애니메이션 구상입니다,.
 
 ## 2022-09-21
-기본적인 디자인툴이 완성 되었습
-
-검색엔진은 
-
+기본적인 디자인툴이 완성 되었습<br>
+<br>
+검색엔진은 <br>
+<br>
 https://www.algolia.com/developers/?utm_content=powered_by&utm_source=getbootstrap.com&utm_medium=referral&utm_campaign=docsearch
-
+<br><br>
 사용할 예정임
+
+## 2022-10-01
+
+지금은 디자인 세부 작업중이고 기기 px마다 다른 상황을 대응하기위해 보정중입니다.
