@@ -1,0 +1,73 @@
+{
+    "report_Date": "Null",
+    "report_time": "Null",
+    "POP": {
+        "info": "강수확율",
+        "type": "%",
+        "data": "Null"
+    },
+    "PTY": {
+        "info": "강수형태",
+        "data": "Null"
+    },
+    "PCP": {
+        "info": "1시간 강수량",
+        "type": "mm",
+        "data": "Null"
+    },
+    "REH": {
+        "info": "습도",
+        "type": "%",
+        "data": "Null"
+    },
+    "SNO": {
+        "info": "1시간 신적설",
+        "type": "cm",
+        "data": "Null"
+    },
+    "SKY": {
+        "info": "하늘상태",
+        "type": "Null",
+        "data": "Null"
+    },
+    "TMP": {
+        "info": "1시간 기온",
+        "type": "℃",
+        "data": "Null"
+    },
+    "TMN": {
+        "info": "아침 최저기온",
+        "type": "℃",
+        "data": "Null"
+    },
+    "TMX": {
+        "info": "낮 최고기온",
+        "type": "℃",
+        "data": "Null"
+    },
+    "UUU": {
+        "info": "풍속(동서성분)",
+        "type": "m/s",
+        "data": "Null"
+    },
+    "VVV": {
+        "info": "풍속(남북성분)",
+        "type": "m/s",
+        "data": "Null"
+    },
+    "WAV": {
+        "info": "파고",
+        "type": "M",
+        "data": "Null"
+    },
+    "VEC": {
+        "info": "풍향",
+        "type": "deg",
+        "data": "Null"
+    },
+    "WSD": {
+        "info": "풍속",
+        "type": "m/s",
+        "data": "Null"
+    }
+}
