@@ -1,0 +1,75 @@
+[
+    {
+        "report_Date": "20221003",
+        "report_time": "2300",
+        "POP": {
+            "info": "강수확율",
+            "type": "%",
+            "data": "30"
+        },
+        "PTY": {
+            "info": "강수형태",
+            "data": "0"
+        },
+        "PCP": {
+            "info": "1시간 강수량",
+            "type": "mm",
+            "data": "강수없음"
+        },
+        "REH": {
+            "info": "습도",
+            "type": "%",
+            "data": "Null"
+        },
+        "SNO": {
+            "info": "1시간 신적설",
+            "type": "cm",
+            "data": "Null"
+        },
+        "SKY": {
+            "info": "하늘상태",
+            "type": "Null",
+            "data": "4"
+        },
+        "TMP": {
+            "info": "1시간 기온",
+            "type": "℃",
+            "data": "23"
+        },
+        "TMN": {
+            "info": "아침 최저기온",
+            "type": "℃",
+            "data": "Null"
+        },
+        "TMX": {
+            "info": "낮 최고기온",
+            "type": "℃",
+            "data": "Null"
+        },
+        "UUU": {
+            "info": "풍속(동서성분)",
+            "type": "m/s",
+            "data": "0"
+        },
+        "VVV": {
+            "info": "풍속(남북성분)",
+            "type": "m/s",
+            "data": "0.2"
+        },
+        "WAV": {
+            "info": "파고",
+            "type": "M",
+            "data": "0.5"
+        },
+        "VEC": {
+            "info": "풍향",
+            "type": "deg",
+            "data": "190"
+        },
+        "WSD": {
+            "info": "풍속",
+            "type": "m/s",
+            "data": "0.2"
+        }
+    }
+]

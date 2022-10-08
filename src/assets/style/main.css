@@ -40,7 +40,7 @@
 }
 
 .search {
-    width:  23vw;
+    width:  22vw;
     height: 6vh;
     border-color: rgba(0, 0, 0, 0);
     background-color:'#d0d0d0';
@@ -121,7 +121,7 @@
 }
 
 .menu_card_out {
-    height: 17vh; 
+    height: 16vh; 
     display: flex; 
     overflow-x: scroll
 }
@@ -158,7 +158,7 @@
     }
 
     .search {
-        width:  22vw;
+        width:  21vw;
         height: 5vh;
         border-color: rgba(0, 0, 0, 0);
         background-color:'#d0d0d0';

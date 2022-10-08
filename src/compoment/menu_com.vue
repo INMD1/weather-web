@@ -136,7 +136,7 @@ export default {
       dayjs.locale("ko");
       this.date = dayjs().format("dddd YYYY.MM.DD");
       this.time = dayjs().format("A HH:mm:ss");
-      console.log(this.time);
+      //console.log(this.time);
     }, 1000);
   },
 };

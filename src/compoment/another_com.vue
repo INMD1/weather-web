@@ -14,9 +14,7 @@
       </div>
     </div>
     <!--이때 해변가 주변이면 최고,최저 온도, 파도,수온 습도 정보를 제공한다.
-        그리고 다른 동네 일경우는 최고,최저 온도, 습도, 자외선, 미세먼지 정보를 제공한다.
-        구분은 네 주소 ㄱ
-         -->
+      그리고 다른 동네 일경우는 최고,최저 온도, 습도, 자외선, 미세먼지 정보를 제공한다.-->
     <div class="another_background">
       <div class="row hidden">
           <div class="col another_line another_grild_size">
