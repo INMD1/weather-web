@@ -9,27 +9,27 @@ moment.tz.setDefault("Asia/Seoul");
 //URL설정
 const today = moment().format("YYYYMMDD"); //오늘 날짜 선언
 const today_time = moment().format("HHmm");
-const { key } = require("./api_key.json")//공공데이터포털에서 받아온 데이터키
 
 //위도 경도
 const beach_num = "304";
 
-console.log(Network(today, beach_num, dataType, today_time));
+console.log(Network(today, beach_num, dataType, today_time ));
 
 //동기
 async function Network(today, beach_num, dataType, today_time) {
+  const api = require("./api_key.json")//공공데이터포털에서 받아온 데이터키
   let json = [];
   let time = ["0200", "0500", "0800", "1100", "1400", "1700", "2000", "2300"]; //단기예보 기준 시간
   //현재 시간 이전 단기예보 정보를 불려오기 위해 가져올 시간을 정한다.
   for (let index = 0; index < time.length; index++) {
     if(today_time < time[index]){
         time = time[index]
-    }
-    
+    } 
   }
-  const response = await axios.get("http://apis.data.go.kr/1360000/BeachInfoservice/getVilageFcstBeach" + "?serviceKey=" + key + "&beach_num=" + beach_num + "&base_date=" + today + "&base_time=" + time);
-  const result = JSON.parse(convert.xml2json(response.data, { compact: true, spaces: 4 })).response.body.items.item;
-    try {
+  console.log(time);
+  const response = await axios.get("http://apis.data.go.kr/1360000/BeachInfoservice/getVilageFcstBeach" + "?serviceKey=" + api.zc + "&beach_num=" + beach_num + "&base_date=" + today + "&base_time=" + time);
+  try {
+        const result = JSON.parse(convert.xml2json(response.data, { compact: true, spaces: 4 })).response.body.items.item;
         for (let i = 0; i < result.length; i++) {
         dataType.report_Date = result[i].fcstDate._text;
         dataType.report_time = time;
@@ -37,10 +37,10 @@ async function Network(today, beach_num, dataType, today_time) {
             result[i].fcstValue._text;
         }
         json.push(dataType);
+        console.log(JSON.stringify(json));
     } catch (error) {
-        console.log(error);
+        console.log("Error! 기상청에서 데이터를 반환을 안했거나 Get오류 입니다.");
     }
-    console.log(JSON.stringify(json ));
 }
 
 
