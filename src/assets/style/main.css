@@ -149,6 +149,10 @@
     margin-right: 10px;
 }
 
+.hidden_PC {
+    display: none;
+}
+
 /*일부 PC에서만 보여야 할때 또는 크기 조정*/
 @media (min-width: 990px) and (max-width: 1500px){ 
     .menu_time {
@@ -192,6 +196,7 @@
         font-weight: bold;
         font-size: 1.7em;
     }
+
 }
 
 /*모바일에서만 보여야 할때 또는 크기 고정*/
@@ -210,4 +215,7 @@
         height: 20vh;
     }
     
+    .hidden_PC {
+        display: block;
+    }
 }

@@ -2,13 +2,26 @@
   <div class="row">
     <div class="blank">
       <div class="container-sm">
-        <div class="col-4">
-          <div class="container">
+        <div class="col-8">
+          <div class="container hidden">
             <ion-icon class="sing" :style="{'color': this.color}"  name="sunny"></ion-icon>
             <h4 class="blod" :style="{'color': this.color}">부산광역시</h4>
             <h5 class="bold" :style="{'color': this.color}">해운대구</h5>
             <span class="bold" :style="{'font-size': '3em', 'color': this.color}">30°C</span>
             <p class="bold" :style="{'color': this.color}"><ion-icon name="map"></ion-icon>부산광역시 해운대구 해운대해변로</p>
+          </div>
+          <div class="container-fluid hidden_PC">
+            <div class="row row-2">
+              <div class="col-6">
+                <ion-icon class="sing" :style="{'color': this.color}"  name="sunny"></ion-icon>
+                  <h4 class="blod" :style="{'color': this.color}">부산광역시</h4>
+                  <h5 class="bold" :style="{'color': this.color}">해운대구</h5>
+              </div>
+              <div class="col-4">
+                <span class="bold" :style="{'font-size': '3em', 'color': this.color}">30°C</span>
+                <p class="bold" :style="{'color': this.color}"><ion-icon name="map"></ion-icon>부산광역시 해운대구 해운대해변로</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -41,8 +54,7 @@
           <div class="col another_line another_grild_size">
               <div class="another_margin">
                   <h3 class="another_text_title" :style="{'color': this.color}">습도</h3>
-                  <i class="bi bi-droplet-half  another_icon
-                  " :style="{'color': this.color}"></i>
+                  <i class="bi bi-droplet-half  another_icon" :style="{'color': this.color}"></i>
                   <p class="another_text_data" :style="{'color': this.color}" >30%</p>
               </div>
           </div>
