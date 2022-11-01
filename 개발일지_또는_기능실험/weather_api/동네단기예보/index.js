@@ -1,9 +1,5 @@
 const axios = require("axios");
 const moment = require("moment");
-const convert = require("xml-js");
-
-//데이터 정리 양식
-let dataType = require("./datatype.json");
 
 //시간 불려오기 위한 변수 설정
 require("moment-timezone");
@@ -17,8 +13,9 @@ const today_time = moment().format("HHmm");
 console.log(apitest(today, today_time));
 
 async function apitest(today, today_time){
+
     const api = require("./api_key.json")//공공데이터포털에서 받아온 데이터키
-    let json = [];
+    let json = new Map(); let dataType = {};
     let time = ["0200", "0500", "0800", "1100", "1400", "1700", "2000", "2300"]; //단기예보 기준 시간
     //현재 시간 이전 단기예보 정보를 불려오기 위해 가져올 시간을 정한다.
     for (let index = 0; index < time.length; index++) {
@@ -31,9 +28,22 @@ async function apitest(today, today_time){
         + "&nx=" + 55 + "&ny=" +127);
     //코드 시도 에려 발생시 오류 메시지 표출
     try {
-        console.log(response.data);
+        const result = response.data.response.body.items.item;
+        //시간 분류
+        for (let index = 0; index < result.length - 1; index++) {
+            if(result[index].fcstTime == result[index + 1].fcstTime){
+                dataType[`${result[index].category}`] = result[index].fcstValue; 
+            }else{
+                dataType.report_Date = result[index].fcstDate;
+                dataType.report_Index = result[index].fcstTime;
+                json.set(result[index].fcstDate + "-" + result[index].fcstTime,  dataType);
+                dataType = {}
+            } 
+        }
+        console.log(Array.from(json.values()));
       } catch (error) {
-          console.log("Error! 기상청에서 데이터를 반환을 안했거나 Get오류 입니다.");
+         console.log(error);
+         console.log("Error! 기상청에서 데이터를 반환을 안했거나 Get오류 입니다.");
       }
 
 }
