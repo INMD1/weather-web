@@ -40,8 +40,9 @@ async function apitest(today, today_time){
                 dataType = {}
             } 
         }
-        console.log(Array.from(json.values()));
-      } catch (error) {
+        //console.log(Array.from(json.values()));
+        console.log(JSON.stringify(Array.from(json.values())));
+    } catch (error) {
          console.log(error);
          console.log("Error! 기상청에서 데이터를 반환을 안했거나 Get오류 입니다.");
       }
