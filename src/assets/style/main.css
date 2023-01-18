@@ -64,6 +64,20 @@
     font-size: 1em;
 }
 
+.algolia {
+    position: absolute;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(53, 53, 56, 0.5)
+}
+
+.search_config{
+    margin: 10vh;
+
+}
+
 .sing {
     align-items: center;
     justify-content: center;

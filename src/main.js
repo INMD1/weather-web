@@ -6,10 +6,15 @@ import "bootstrap"
 import "./assets/style/main.css"
 
 import "bootstrap-icons/font/bootstrap-icons.css"
+import InstantSearch from 'vue-instantsearch';
+import store from './store/strage';
 
+
+Vue.use(InstantSearch);
 
 Vue.config.productionTip = false
 
 new Vue({
+  store,
   render: h => h(App),
 }).$mount('#app')

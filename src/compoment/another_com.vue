@@ -73,15 +73,14 @@ export default {
   },
   //watch를 활용해서 상위컴포먼트 데이터 변화를 감지한다.
   watch: {
-		bgid() {
-      if(this.bgid == 4 || this.bgid == 7){
-        this.color = "white"
-      }
-    }
   },
   //바로 실행되는 곳이다
   created() {
-
+  },
+  mounted() {
+    if (this.$store.state.bg_id == 4 || this.$store.state.bg_id == 7) {
+        this.color = "white";
+      }
   }
 }
 </script>
