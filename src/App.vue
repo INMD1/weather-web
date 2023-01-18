@@ -12,16 +12,12 @@
     <!--검색 페이지 (안쓸때는 hide 처리)-->
     <div class="algolia" v-if="this.$store.state.search_check == 1">
       <div class="card search_config">
-        <ais-instant-search
-          :search-client="searchClient"
-          index-name="demo_ecommerce">
-          <ais-search-box  />
-          <ais-hits style="height: 10vh">
-            <template v-slot:item="{ item }">
-              <h2>{{ item.name }}</h2>
-            </template>
-          </ais-hits>
-        </ais-instant-search>
+        <model-select
+          :options="options"
+          v-model="item"
+          placeholder="select item"
+        >
+        </model-select>
       </div>
     </div>
     <!--메인 페이지 -->
@@ -51,26 +47,37 @@
 </template>
 
 <script lang="js">
-import algoliasearch from 'algoliasearch/lite';
-import 'instantsearch.css/themes/satellite-min.css';
-
+import { ModelSelect } from 'vue-search-select'
 import menucom from "./compoment/menu_com.vue";
 import anothercom from "./compoment/another_com.vue";
-
+import data from "./assets/in.json"
 export default {
   name: 'App',
   components : {
     menucom,
-    anothercom
+    anothercom,
+    ModelSelect
+
   },
   data() {
     return {
       title_color: "black",
-      searchClient: algoliasearch(
-        'B1G2GM9NG0',
-        'aadef574be1f9252bb48d4ea09b5cfe5'
-      ),
+      item: {
+          value: '',
+          text: ''
+        },
+      options: data,
+
     };
+  },
+  methods :{
+    reset () {
+        this.item = {}
+      },
+      selectFromParentComponent1 () {
+        // select option from parent component
+        this.item = this.options[0]
+      },
   },
   mounted() {
     //어두운 사진이 나오면 글자 색이 바뀐다.

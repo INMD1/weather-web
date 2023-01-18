@@ -6,11 +6,9 @@ import "bootstrap"
 import "./assets/style/main.css"
 
 import "bootstrap-icons/font/bootstrap-icons.css"
-import InstantSearch from 'vue-instantsearch';
 import store from './store/strage';
 
-
-Vue.use(InstantSearch);
+import 'vue-search-select/dist/VueSearchSelect.css'
 
 Vue.config.productionTip = false
 
