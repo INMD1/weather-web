@@ -51,6 +51,7 @@ import { ModelSelect } from 'vue-search-select'
 import menucom from "./compoment/menu_com.vue";
 import anothercom from "./compoment/another_com.vue";
 import data from "./assets/in.json"
+import { log } from 'console';
 export default {
   name: 'App',
   components : {
@@ -72,7 +73,7 @@ export default {
   },
   methods :{
     reset () {
-        this.item = {}
+        this.item = {};
       },
       selectFromParentComponent1 () {
         // select option from parent component
@@ -84,6 +85,7 @@ export default {
     if(this.$store.state.bg_id == 4 || this.$store.state.bg_id == 7){
       this.title_color = "white"
     }
+    
   }
 }
 </script>
