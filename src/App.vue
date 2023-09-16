@@ -8,6 +8,7 @@
         this.$store.state.bg_id +
         '.webp)',
     }"
+    ref="searchbar"
   >
     <!--검색 페이지 (안쓸때는 hide 처리)-->
     <div class="algolia" v-if="this.$store.state.search_check == 1">
@@ -51,7 +52,6 @@ import { ModelSelect } from 'vue-search-select'
 import menucom from "./compoment/menu_com.vue";
 import anothercom from "./compoment/another_com.vue";
 import data from "./assets/in.json"
-import { log } from 'console';
 export default {
   name: 'App',
   components : {
@@ -71,6 +71,14 @@ export default {
 
     };
   },
+
+  watch: {
+    //값이 변경되면 이벤트가 발생함
+    item(newValue){
+      this.$store.commit("search", 0);
+      console.log(newValue);
+    }
+  },
   methods :{
     reset () {
         this.item = {};
@@ -79,13 +87,23 @@ export default {
         // select option from parent component
         this.item = this.options[0]
       },
+      onClick(e){
+        window.addEventListener('click', this.onClick);
+        if(e.target.parentNode == this.$refs.searchbar){
+          this.$store.commit("search", 0);
+          window.removeEventListener('click', this.onClick);
+        }
+    },
   },
   mounted() {
+
     //어두운 사진이 나오면 글자 색이 바뀐다.
     if(this.$store.state.bg_id == 4 || this.$store.state.bg_id == 7){
       this.title_color = "white"
     }
-    
+    //이벤트 외부영역 클릭시 사리즈는거 추가
+    window.addEventListener('click', this.onClick);
+
   }
 }
 </script>
