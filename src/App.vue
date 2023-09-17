@@ -1,15 +1,6 @@
 <template>
   <!--바탕화면 삽입-->
-  <div
-    class="background-set"
-    :style="{
-      backgroundImage:
-        'url(https://raw.githubusercontent.com/INMD1/weather-web/main/src/assets/image/background/bg' +
-        this.$store.state.bg_id +
-        '.webp)',
-    }"
-    ref="searchbar"
-  >
+  <div class="background-set" ref="searchbar">
     <!--검색 페이지 (안쓸때는 hide 처리)-->
     <div class="algolia" v-if="this.$store.state.search_check == 1">
       <div class="card search_config">
@@ -34,6 +25,11 @@
                 href="#"
                 >부산광역시 종합 날씨 정보</a
               >
+              <form class="d-flex" role="search">
+                <button class="btn">
+                  <i class="bi bi-justify"></i>
+                </button>
+              </form>
             </div>
           </nav>
           <anothercom />
@@ -76,6 +72,7 @@ export default {
     //값이 변경되면 이벤트가 발생함
     item(newValue){
       this.$store.commit("search", 0);
+      this.$store.commit("select_location",newValue);
       console.log(newValue);
     }
   },

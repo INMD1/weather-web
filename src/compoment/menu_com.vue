@@ -9,8 +9,7 @@
               현재 대한민국 표준 시간은...
             </h4>
             <span
-              class="blod"
-              style="font-size: 3rem"
+              class="time blod"
               :style="{ color: this.color }"
               >{{ this.time }}</span
             >
