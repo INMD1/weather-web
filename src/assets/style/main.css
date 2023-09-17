@@ -1,257 +1,315 @@
 /*폰트*/
 @font-face {
-    font-family: '  ';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-01@1.0/MICEGothic Bold.woff2') format('woff2');
-    font-weight: 700;
-    font-style: normal;
+  font-family: "  ";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-01@1.0/MICEGothic Bold.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-style: normal;
 }
-
 
 /*디자인코드*/
 .background-set {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  margin: 0;
+  position: absolute;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.menu_background {
+  background-color: rgba(99, 97, 97, 0.61);
+  height: 100vh;
+  overflow: auto;
+}
+
+.another_background {
+  background-color: rgba(99, 97, 97, 0.61);
+  height: 100vh;
+}
+
+.blank {
+  height: 70vh;
+}
+
+.MICEGothic {
+  font-family: "MICEGothic";
+}
+
+.search {
+  width: 23vw;
+  height: 6vh;
+  border-color: rgba(0, 0, 0, 0);
+  background-color: "#d0d0d0";
+  /*아래 소스는 부트스트랩 에서 가지고옴*/
+  border-radius: 0.375rem;
+  border-top-left-radius: 0.375rem;
+  border-top-right-radius: 0.375rem;
+  border-bottom-right-radius: 0.375rem;
+  border-bottom-left-radius: 0.375rem;
+}
+
+.search-another {
+  align-items: center;
+  justify-content: left;
+  display: flex;
+}
+
+.search-text {
+  align-items: center;
+  display: flex;
+  font-style: bold;
+  font-size: 1.5rem;
+}
+
+.algolia {
+  position: absolute;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(53, 53, 56, 0.5);
+}
+
+.search_config {
+  margin: 10vh;
+}
+
+.sing {
+  align-items: center;
+  justify-content: center;
+  font-size: 110px;
+}
+
+.blod {
+  font-weight: bold;
+}
+
+.another_line {
+  border-inline: 0.1em solid;
+  writing-mode: horizontal-tb;
+}
+
+.another_grild_size {
+  height: 100vh;
+}
+
+.another_margin {
+  margin-right: 15%;
+  margin-left: 15%;
+  margin-bottom: 15%;
+  margin-top: 10%;
+}
+
+.another_text_title {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.another_icon {
+  font-size: 5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.another_text_data {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.9em;
+}
+
+.menu_time {
+  height: 12vh;
+  margin-top: 4%;
+}
+
+.menu_card {
+  margin-bottom: 1rem;
+  height: 18vh;
+  background-color: rgba(170, 165, 165, 0.63);
+}
+
+.menu_card_out {
+  height: 14vh;
+  display: flex;
+  overflow-x: scroll;
+}
+
+.menu_card_wind {
+  margin-bottom: 1rem;
+  height: 18vh;
+  background-color: rgba(170, 165, 165, 0.63);
+}
+
+.menu_card_out_wind {
+  height: 14vh;
+  display: flex;
+  overflow-x: scroll;
+}
+
+
+/*out 부분 스크롤 디자인*/
+.menu_card_out::-webkit-scrollbar {
+  width: 10px;
+}
+.menu_card_out::-webkit-scrollbar-thumb {
+  background-color: #2f3542;
+  border-radius: 10px;
+  background-clip: padding-box;
+  border: 2px solid transparent;
+}
+.menu_card_out::-webkit-scrollbar-track {
+  background-color: grey;
+  border-radius: 10px;
+  box-shadow: inset 0px 0px 5px white;
+}
+
+/*바람부분*/
+.menu_card_out_wind::-webkit-scrollbar {
+  width: 10px;
+}
+.menu_card_out_wind::-webkit-scrollbar-thumb {
+  background-color: #2f3542;
+  border-radius: 10px;
+  background-clip: padding-box;
+  border: 2px solid transparent;
+}
+.menu_card_out_wind::-webkit-scrollbar-track {
+  background-color: grey;
+  border-radius: 10px;
+  box-shadow: inset 0px 0px 5px white;
+}
+
+
+.menu_card_data {
+  height: auto;
+  display: flex;
+  font-size: 1rem;
+  margin-right: 10px;
+}
+
+.hidden_PC {
+  display: none;
+}
+
+.search-bar {
+
+}
+
+.time {
+  font-size: 3rem;
+}
+.mobile_hide {
+  display: none;
+}
+/*일부 PC에서만 보여야 할때 또는 크기 조정*/
+@media (min-width: 990px) and (max-width: 1500px) {
+  .menu_time {
+    height: 14vh;
+    display: flex;
+    margin-top: 4%;
+  }
+
+  .search {
+    width: 21vw;
+    height: 5vh;
+    border-color: rgba(0, 0, 0, 0);
+    background-color: "#d0d0d0";
+    /*아래 소스는 부트스트랩 에서 가지고옴*/
+    border-radius: 0.375rem;
+    border-top-left-radius: 0.375rem;
+    border-top-right-radius: 0.375rem;
+    border-bottom-right-radius: 0.375rem;
+    border-bottom-left-radius: 0.375rem;
+  }
+
+  .another_text_title {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .another_icon {
+    font-size: 4em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .another_text_data {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.7rem;
+  }
+
+  .search-text {
+    align-items: center;
+    display: flex;
+    font-style: bold;
+    font-size: 1rem;
+  }
+
+  .time {
+    font-size: 1.9rem;
+  }
+}
+
+/*모바일에서만 보여야 할때 또는 크기 고정*/
+@media (max-width: 990px) {
+  .menu_card_wind {
+    margin-bottom: 1rem;
+    height: 22vh;
+    background-color: rgba(170, 165, 165, 0.63);
+  }
+  
+  .menu_card_out_wind {
+    height: 18vh;
+    display: flex;
+    overflow-x: scroll;
+  }
+
+  .mobile_hide {
+    display: block;
+  }
+
+  .background-set {
     height: 100vh;
     width: 100vw;
-    overflow: hidden;
-    margin:0;
+    margin: 0;
+    overflow-y: auto;
     position: absolute;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     background-color: rgba(255, 255, 255, 0.4);
-}
+  }
 
-.menu_background {
-    background-color:rgba(99, 97, 97, 0.61);
+  .another_background {
+    background-color: rgba(36, 35, 35, 0.61);
+    border-radius: 6% 6% 0% 0%;
     height: 100vh;
     overflow: auto;
-}
-
-.another_background {
-    background-color:rgba(99, 97, 97, 0.61);
-    height: 100vh;
-}
-
-.blank {
-    height: 70vh;
-}
-
-.MICEGothic {
-    font-family: 'MICEGothic';
-}
-
-.search {
-    width:  23vw;
-    height: 6vh;
-    border-color: rgba(0, 0, 0, 0);
-    background-color:'#d0d0d0';
-    /*아래 소스는 부트스트랩 에서 가지고옴*/
-    border-radius: .375rem;
-    border-top-left-radius: 0.375rem;
-    border-top-right-radius: 0.375rem;
-    border-bottom-right-radius: 0.375rem;
-    border-bottom-left-radius: 0.375rem;
-}
-
-.search-another {
-    align-items: center;
-    justify-content: left;
-    display: flex;
-}
-
-.search-text {
-    align-items: center;
-    display: flex;
-    font-style: bold;
-    font-size: 1.5rem;
-}
-
-.algolia {
-    position: absolute;
-    justify-content: center;
-    align-items: flex-start;
-    height: 100vh;
-    width: 100vw;
-    background-color: rgba(53, 53, 56, 0.5)
-}
-
-.search_config{
-    margin: 10vh;
-
-}
-
-.sing {
-    align-items: center;
-    justify-content: center;
-    font-size: 110px;
-}
-
-.blod {
-    font-weight: bold;
-}
-
-.another_line {
-    border-inline: 0.1em solid;
-    writing-mode: horizontal-tb;
-}
-
-.another_grild_size {
-    height: 100vh;  
-}
-
-.another_margin {
-    margin-right: 15%;
-    margin-left: 15%;
-    margin-bottom: 15%;
-    margin-top: 10%;
-}
-
-.another_text_title {
-    text-align: center;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.another_icon {
-    font-size: 5em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.another_text_data {
-    text-align: center;
-    font-weight: bold;
-    font-size: 1.9em;
-}
-
-.menu_time {
-    height: 12vh; 
-    margin-top: 4%;
-}
-
-.menu_card {
-    margin-bottom: 1rem; 
-    height: 20vh;
-    background-color: rgba(170, 165, 165, 0.63);
-}
-
-.menu_card_out {
-    height: 16vh; 
-    display: flex; 
-    overflow-x: scroll
-}
-
-/*out 부분 스크롤 디자인*/
-.menu_card_out::-webkit-scrollbar {
-    width: 10px;
-  }
-  .menu_card_out::-webkit-scrollbar-thumb {
-    background-color: #2f3542;
-    border-radius: 10px;
-    background-clip: padding-box;
-    border: 2px solid transparent;
-  }
-  .menu_card_out::-webkit-scrollbar-track {
-    background-color: grey;
-    border-radius: 10px;
-    box-shadow: inset 0px 0px 5px white;
   }
 
-
-.menu_card_data {
-    display: flex;
-    font-size: 1rem;
-    margin-right: 10px;
-}
-
-.hidden_PC {
+  .hidden {
     display: none;
-}
+  }
 
-.search-bar {
-    margin-top: 4.3vh;
-}
+  .blank {
+    height: 18%;
+  }
 
-.time {
-    font-size: 3rem;
-}
-/*일부 PC에서만 보여야 할때 또는 크기 조정*/
-@media (min-width: 990px) and (max-width: 1500px){ 
-    .menu_time {
-        height: 14vh; 
-        display: flex;  
-        margin-top: 4%;
-    }
+  .hidden_PC {
+    display: block;
+  }
 
-
-    .search {
-        width:  21vw;
-        height: 5vh;
-        border-color: rgba(0, 0, 0, 0);
-        background-color:'#d0d0d0';
-        /*아래 소스는 부트스트랩 에서 가지고옴*/
-        border-radius: .375rem;
-        border-top-left-radius: 0.375rem;
-        border-top-right-radius: 0.375rem;
-        border-bottom-right-radius: 0.375rem;
-        border-bottom-left-radius: 0.375rem;
-    }
-
-    .another_text_title {
-        text-align: center;
-        font-weight: bold;
-        margin-bottom: 10px;
-    }
-    
-    .another_icon {
-        font-size: 4em;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .another_text_data {
-        text-align: center;
-        font-weight: bold;
-        font-size: 1.7rem;
-    }
-
-    .search-text {
-        align-items: center;
-        display: flex;
-        font-style: bold;
-        font-size: 1rem;
-    }
-
-    .time {
-        font-size: 1.9rem;
-    }
-
-}
-
-/*모바일에서만 보여야 할때 또는 크기 고정*/
-@media (max-width: 990px) {
-    .another_background {
-        background-color:rgba(36, 35, 35, 0.61);
-        height: 100vh;
-        border-radius: 8% 8% 0% 0%;
-    }
-
-    .hidden {
-        display: none;
-    }
-
-    .blank {
-        height: 18vh;
-    
-    }
-    
-    .hidden_PC {
-        display: block;
-    }
-
-    .flet_left {
-        text-align: left;
-        float: left;
-    }
+  .flet_left {
+    text-align: left;
+    float: left;
+  }
 }

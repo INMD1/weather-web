@@ -25,18 +25,13 @@
                 href="#"
                 >부산광역시 종합 날씨 정보</a
               >
-              <form class="d-flex" role="search">
-                <button class="btn">
-                  <i class="bi bi-justify"></i>
-                </button>
-              </form>
             </div>
           </nav>
           <anothercom />
         </div>
         <!--검색 또는 주간날씨를 알려주는 컴포먼트-->
         <div class="hidden menu_background col-md-3">
-          <menucom />
+          <menucom/>
         </div>
       </div>
     </div>
@@ -73,6 +68,7 @@ export default {
     item(newValue){
       this.$store.commit("search", 0);
       this.$store.commit("select_location",newValue);
+      window.localStorage.setItem("loacation_temp", JSON.stringify(newValue));
       console.log(newValue);
     }
   },
@@ -93,14 +89,12 @@ export default {
     },
   },
   mounted() {
-
     //어두운 사진이 나오면 글자 색이 바뀐다.
     if(this.$store.state.bg_id == 4 || this.$store.state.bg_id == 7){
       this.title_color = "white"
     }
     //이벤트 외부영역 클릭시 사리즈는거 추가
     window.addEventListener('click', this.onClick);
-
   }
 }
 </script>

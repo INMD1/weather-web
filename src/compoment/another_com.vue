@@ -127,12 +127,20 @@
           </div>
         </div>
       </div>
+      <div class="hidden_PC">
+        <menucom style="margin-top: 3vh;" />
+
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import menucom from "./menu_com.vue";
 export default {
+  components: {
+    menucom
+  },
   props: ["bgid"],
   data() {
     return {
