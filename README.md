@@ -11,6 +11,7 @@
 모바일에서도 사용이 가능하고 다른 기기에서도 응용을 할수 있게 반응형으로 디자인 했습니다.
 | 모바일  | 다른기기  |
 |---------|----------|
+|![image](https://github.com/INMD1/weather-web/assets/87979171/91da7f45-5391-41f5-b527-d32cd30f1baa)|![image](https://github.com/INMD1/weather-web/assets/87979171/d8f34c90-5e8f-4e14-a679-bd521a36fd69)| 
 
 ## TRY ME?
 이프로젝트를 한번 시험적으로 가동을 할려면 아래와 같은 과정이 필요합니다.
