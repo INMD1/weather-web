@@ -72,60 +72,7 @@
       그리고 다른 동네 일경우는 최고,최저 온도, 습도, 자외선, 미세먼지 정보를 제공한다.-->
     <div class="another_background">
       <div class="row hidden">
-        <div class="col another_line another_grild_size">
-          <div class="another_margin">
-            <h3 class="another_text_title" :style="{ color: this.color }">
-              파도
-            </h3>
-            <i
-              class="bi bi-tsunami another_icon"
-              :style="{ color: this.color }"
-            ></i>
-            <p class="another_text_data" :style="{ color: this.color }">
-              30m/s
-            </p>
-          </div>
-        </div>
-        <div class="col another_line another_grild_size">
-          <div class="another_margin">
-            <h3 class="another_text_title" :style="{ color: this.color }">
-              풍향
-            </h3>
-            <i
-              class="bi bi-signpost another_icon"
-              :style="{ color: this.color }"
-            ></i>
-            <p class="another_text_data" :style="{ color: this.color }">
-              남동쪽
-            </p>
-          </div>
-        </div>
-        <div class="col another_line another_grild_size">
-          <div class="another_margin">
-            <h3 class="another_text_title" :style="{ color: this.color }">
-              자외전
-            </h3>
-            <i
-              class="bi bi-brightness-alt-high another_icon"
-              :style="{ color: this.color }"
-            ></i>
-            <p class="another_text_data" :style="{ color: this.color }">
-              매우 높음
-            </p>
-          </div>
-        </div>
-        <div class="col another_line another_grild_size">
-          <div class="another_margin">
-            <h3 class="another_text_title" :style="{ color: this.color }">
-              습도
-            </h3>
-            <i
-              class="bi bi-droplet-half another_icon"
-              :style="{ color: this.color }"
-            ></i>
-            <p class="another_text_data" :style="{ color: this.color }">30%</p>
-          </div>
-        </div>
+ 
       </div>
       <div class="hidden_PC">
         <menucom style="margin-top: 3vh;" />

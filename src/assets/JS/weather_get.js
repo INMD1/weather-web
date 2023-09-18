@@ -23,8 +23,7 @@ async function Getfun(nx,ny) {
     for (let index = 0; index < data_temp.length; index++) {
         temp.push(data_temp[index])
     }
-    console.log([...new Set(temp)]);
-    console.log(JSON.stringify([...new Set(temp)]));
+    return temp;
 }
 
 async function apitest(today, today_time, nx, ny) {

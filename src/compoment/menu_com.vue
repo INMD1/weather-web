@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <!-- 대한민국 표준시간 제공 -->
-    <div class="row hidden" >
+    <div class="row hidden">
       <div class="col">
         <div class="menu_time">
           <div style="margin: auto">
@@ -46,19 +46,20 @@
                 <div class="menu_card_data">
                   <div class="row" style="width: 5vw; text-align: center">
                     <div class="col">
-                      <span style="font-size: 0.7em">
+                      <span class="blod" style="font-size: 1em">
                         {{ time_set[item.report_Index] }}
                       </span>
-                      <br/>
+                      <br />
                       {{ item.TMP }} °C
                     </div>
                     <div class="w-100"></div>
                     <div class="col">
                       <br />
+                      <br />
                     </div>
                     <div class="w-100"></div>
                     <div class="col">
-                      <p style="font-size: 0.4em">
+                      <p style="font-size: 0.9em">
                         강수확률 <br />
                         {{ item.POP }} %
                       </p>
@@ -79,19 +80,28 @@
                 <div class="menu_card_data">
                   <div class="row" style="width: 5vw; text-align: center">
                     <div class="col">
-                      <span style="font-size: 0.7em">
+                      <span class="blod"  style="font-size: 1em">
                         {{ time_set[item.report_Index] }}
                         <br />
                       </span>
                     </div>
                     <div class="w-100"></div>
+
                     <div class="col">
+                      <p style="font-size: 0.9rem">
+                        풍속 <br />
+                        {{ item.WSD }} m/s
+                      </p>
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="col" :style="{transform : 'rotate(' +  item.VEC + 'deg)' }">
+                      <i class="bi bi-cursor-fill" style="font-size: 1em;"></i>
                       <br />
                       <br />
                     </div>
                     <div class="w-100"></div>
                     <div class="col">
-                      <p style="font-size: 0.4rem">
+                      <p style="font-size: 0.9rem">
                         풍향 <br />
                         {{ item.VEC }} deg
                       </p>
@@ -167,16 +177,18 @@
                 <div class="menu_card_data">
                   <div class="row" style="width: 20vw; text-align: center">
                     <div class="col">
-                      <span style="font-size: 0.8rem">
+                      <span class="blod" style="font-size: 0.8rem">
                         {{ time_set[item.report_Index] }}
                         <br />
-                        풍향
+                        풍속
                         <br />
-                        {{ item.VEC }} %
+                        {{ item.WSD }} m/s
                       </span>
                     </div>
                     <div class="w-100"></div>
-                    <div class="col">
+                    <div class="w-100"></div>
+                    <div class="col" :style="{transform : 'rotate(' +  item.VEC + 'deg)' }">
+                      <i class="bi bi-cursor-fill" style="font-size: 0.8em;"></i>
                       <br />
                     </div>
                     <div class="w-100"></div>
@@ -216,7 +228,6 @@
 </template>
 <script>
 import dayjs from "dayjs";
-import example_data from "../assets/style/example/example_sea_data.json";
 export default {
   components: {},
   props: ["bgid"],
@@ -254,28 +265,32 @@ export default {
       },
     };
   },
-  computed: {},
   //watch를 활용해서 상위컴포먼트 데이터 변화를 감지한다.
-  watch: {},
-  //바로 실행되는 곳이다
-  created() {
-    this.getdata = example_data;
-    // dayjs().format("HHmm")
-    for (let index = 0; index < this.getdata.length; index++) {
-      //00시 이후
-      if (
-        dayjs().format("YYYYMMDD") == this.getdata[index].report_Date &&
-        100 < this.getdata[index].report_Index
-      ) {
+  //watch하고 비슷한디 좀 쉬움
+  computed: {
+    resetdata: function () {
+      const data = this.$store.state.location_weather_data;
+      for (let index = 0; index < data.length; index++) {
+        //00시 이후
         if (
-          dayjs().format("YYYYMMDD") == this.getdata[index].report_Date &&
-          dayjs().format("HHMM") > this.getdata[index].report_Index
+          dayjs().format("YYYYMMDD") == data[index].report_Date &&
+          100 < data[index].report_Index
         ) {
-          this.getdata.splice(index, 1);
+          if (
+            dayjs().format("YYYYMMDD") == data[index].report_Date &&
+            dayjs().format("HHMM") > data[index].report_Index
+          ) {
+            data.splice(index, 1);
+          }
         }
       }
-    }
-    console.log(this.getdata);
+      return data;
+    },
+  },
+  watch: {
+    resetdata(value) {
+      this.getdata = value;
+    },
   },
   methods: {
     search() {

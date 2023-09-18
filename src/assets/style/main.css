@@ -27,7 +27,7 @@
 }
 
 .another_background {
-  background-color: rgba(99, 97, 97, 0.61);
+  background-color: rgba(255, 255, 255, 0);
   height: 100vh;
 }
 
@@ -142,7 +142,7 @@
 
 .menu_card_wind {
   margin-bottom: 1rem;
-  height: 18vh;
+  height: 16vh;
   background-color: rgba(170, 165, 165, 0.63);
 }
 
@@ -198,7 +198,7 @@
 }
 
 .search-bar {
-  margin-top: 4.3vh;
+  margin-top: 2vh;
 }
 
 .time {
@@ -209,6 +209,36 @@
 }
 /*일부 PC에서만 보여야 할때 또는 크기 조정*/
 @media (min-width: 990px) and (max-width: 1500px) {
+  .search-bar {
+    margin-top: 4vh;
+  }
+
+  
+  .menu_card {
+    margin-bottom: 1rem;
+    height: 30vh;
+    background-color: rgba(170, 165, 165, 0.63);
+  }
+  
+  .menu_card_out {
+    height: 26vh;
+    display: flex;
+    overflow-x: scroll;
+  }
+  
+  .menu_card_wind {
+    margin-bottom: 1rem;
+    height: 33vh;
+    background-color: rgba(170, 165, 165, 0.63);
+  }
+  
+  .menu_card_out_wind {
+    height: 29vh;
+    display: flex;
+    overflow-x: scroll;
+  }
+  
+
   .menu_time {
     height: 14vh;
     display: flex;
@@ -261,6 +291,18 @@
 
 /*모바일에서만 보여야 할때 또는 크기 고정*/
 @media (max-width: 990px) {
+  .menu_card {
+    margin-bottom: 1rem;
+    height: 22vh;
+    background-color: rgba(170, 165, 165, 0.63);
+  }
+  
+  .menu_card_out {
+    height: 18vh;
+    display: flex;
+    overflow-x: scroll;
+  }
+
   .menu_card_wind {
     margin-bottom: 1rem;
     height: 26vh;

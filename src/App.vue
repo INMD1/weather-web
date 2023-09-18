@@ -39,6 +39,7 @@
 </template>
 
 <script lang="js">
+import { Getfun } from "./assets/JS/weather_get"
 import { ModelSelect } from 'vue-search-select'
 import menucom from "./compoment/menu_com.vue";
 import anothercom from "./compoment/another_com.vue";
@@ -65,11 +66,13 @@ export default {
 
   watch: {
     //값이 변경되면 이벤트가 발생함
-    item(newValue){
+    async item(newValue){
       this.$store.commit("search", 0);
-      this.$store.commit("select_location",newValue);
-      window.localStorage.setItem("loacation_temp", JSON.stringify(newValue));
-      console.log(newValue);
+      window.localStorage.setItem("select_location", JSON.stringify(newValue));
+      this.$store.commit("location_weather_data", await Getfun(newValue.X,newValue.Y));
+      this.$store.commit("select_location", newValue);
+      console.log(this.$store.state.select_location);
+      console.log(this.$store.state.location_weather_data);
     }
   },
   methods :{
@@ -88,7 +91,10 @@ export default {
         }
     },
   },
-  mounted() {
+  async mounted() {
+    this.$store.state.select_location = JSON.parse(window.localStorage.getItem("select_location"))
+    this.$store.commit("location_weather_data", await Getfun(this.$store.state.select_location.X,this.$store.state.select_location.Y));
+    console.log(JSON.parse(window.localStorage.getItem("select_location")));
     //어두운 사진이 나오면 글자 색이 바뀐다.
     if(this.$store.state.bg_id == 4 || this.$store.state.bg_id == 7){
       this.title_color = "white"
