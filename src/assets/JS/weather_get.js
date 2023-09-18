@@ -9,25 +9,25 @@ moment.tz.setDefault("Asia/Seoul");
 const today = moment().format("YYYYMMDD"); //오늘 날짜 선언
 const today_time = moment().format("HHmm");
 
-export { e }
+export { Getfun }
 //지역 좌표설정 (이건 나중에 만들거다)
-async function e() {
+async function Getfun(nx,ny) {
     let temp = [], data_temp = [];
-    data_temp = JSON.parse(await apitest(today - 1, today_time))
+    data_temp = JSON.parse(await apitest(today - 1, today_time, nx, ny))
     for (let index = 0; index < data_temp.length; index++) {
         if (data_temp[index].report_Date == today) {
             temp.push(data_temp[index]);
         }
     }
-    data_temp = JSON.parse(await apitest(today, today_time))
+    data_temp = JSON.parse(await apitest(today, today_time,nx, ny))
     for (let index = 0; index < data_temp.length; index++) {
         temp.push(data_temp[index])
     }
     console.log([...new Set(temp)]);
     console.log(JSON.stringify([...new Set(temp)]));
-};
+}
 
-async function apitest(today, today_time) {
+async function apitest(today, today_time, nx, ny) {
 
     const api = require("./api_key.json")//공공데이터포털에서 받아온 데이터키
     let json = new Map(); let dataType = {};
@@ -40,10 +40,7 @@ async function apitest(today, today_time) {
     }
     const response = await axios.get("http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst" + "?serviceKey=" + api.zc +
         "&pageNo=1&numOfRows=1000&dataType=JSON" + "&base_date=" + today + "&base_time=" + time
-        + "&nx=" + 55 + "&ny=" + 127);
-    console.log("http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst" + "?serviceKey=" + api.zc +
-        "&pageNo=1&numOfRows=1000&dataType=JSON" + "&base_date=" + today + "&base_time=" + time);
-    console.log(today_time);
+        + "&nx=" + nx + "&ny=" + ny);
     const result = response.data.response.body.items.item;
     //코드 시도 에려 발생시 오류 메시지 표출
     try {
@@ -67,18 +64,3 @@ async function apitest(today, today_time) {
     }
 
 }
-
-
-//sample url
-//https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?serviceKey=[key Decode]pageNo=1&numOfRows=1000&dataType=JSON&base_date=20221009&base_time=0500&nx=55&ny=127
-
-//요청변수
-
-//ServiceKey : 인증키
-//numOfRows: 한 페이지 결과 수
-//pageNo: 페이지 번호
-//dataType: 응답자료형식 -> json으로 설정하기
-//base_date: 발표일자
-//base_time: 발표시각
-//nx: 예보지점 X
-//ny: 예보지점 Y

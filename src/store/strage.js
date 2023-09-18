@@ -10,7 +10,8 @@ export default new vuex.Store({
     select_location: {
       value: '',
       text: ''
-    }
+    },
+    location_weather_data: ""
   },
   mutations: {
     search : function (state, value) {
@@ -20,7 +21,10 @@ export default new vuex.Store({
       state.bg_id = value
     },
     select_location : function  (state, value){
-      state.select_location = value
-    }
-  }
+      state.select_location = value 
+    },
+    location_weather_data: function  (state, value){
+      state.location_weather_data = value
+    },
+  },
 })
